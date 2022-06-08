@@ -1,0 +1,66 @@
+{
+    "extends": [
+      "config:base",
+      ":semanticCommits",
+      ":maintainLockFilesMonthly",
+      "workarounds:mavenCommonsAncientVersion",
+      "workarounds:ignoreSpringCloudNumeric",
+      "workarounds:ignoreWeb3jCoreWithOldReleaseTimestamp",
+      "workarounds:ignoreHttp4sDigestMilestones",
+      "workarounds:typesNodeVersioning",
+      "workarounds:reduceRepologyServerLoad",
+      "workarounds:doNotUpgradeFromAlpineStableToEdge"
+    ],
+    "labels": ["dependencies"],
+    "assigneesFromCodeOwners": true,
+    "postUpdateOptions": ["yarnDedupeFewer"],
+    "schedule": ["before 8am on Monday"],
+    "stabilityDays": 3,
+    "separateMajorMinor": true,
+    "separateMultipleMajor": false,
+    "separateMinorPatch": false,
+    "lockFileMaintenance": {
+      "extends": ["group:all"],
+      "commitMessageAction": "Update"
+    },
+    "packageRules": [
+      {
+        "matchUpdateTypes": ["minor", "patch", "pin", "digest"],
+        "automerge": true
+      },
+      {
+        "matchPackagePatterns": ["^eslint"],
+        "groupName": "eslint packages"
+      },
+      {
+        "matchDatasources": ["docker"],
+        "matchUpdateTypes": ["major"],
+        "enabled": false
+      },
+      {
+        "extends": "monorepo:semantic-release",
+        "matchUpdateTypes": ["digest", "patch", "minor", "major"],
+        "groupName": "semantic-release monorepo"
+      },
+      {
+        "matchDepTypes": ["action"],
+        "pinDigests": true
+      }
+    ],
+    "timezone": "Europe/Berlin",
+    "vulnerabilityAlerts": {
+      "labels": ["security"],
+      "automerge": true,
+      "assignees": ["@isokosan"]
+    },
+    "ignorePaths": [
+      "*/node_modules/*",
+      "*/bower_components/*",
+      "*/vendor/*",
+      "*/examples/*",
+      "*/_tests_/*",
+      "*/test/*",
+      "*/tests/*",
+      "*/_fixtures_/*"
+    ]
+  }
