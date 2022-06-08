@@ -10,7 +10,7 @@ on:
 jobs:
   release:
     name: Release
-    runs-on: self-hosted
+    runs-on: ubuntu-latest
     steps:
       - name: Checkout
         uses: actions/checkout@2541b1294d2704b0964813337f33b291d3f8596b # tag=v3
@@ -29,4 +29,5 @@ jobs:
       - name: Release
         env:
           GITHUB_TOKEN: ${{ secrets.CI_TOKEN }}
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
         run: npx semantic-release
