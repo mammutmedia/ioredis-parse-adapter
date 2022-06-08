@@ -1,0 +1,63 @@
+{
+  "name": "ioredis-parse-adapter",
+  "version": "1.0.0",
+  "description": "parse-server redis adapter using ioredis",
+  "main": "src/index.js",
+  "license": "GPLV3",
+  "private": false,
+  "scripts": {
+    "pretest": "npm run lint",
+    "test": "TESTING=1 nyc ./node_modules/.bin/jasmine",
+    "lint:js": "eslint --cache .",
+    "lint:prettier": "prettier --write .",
+    "lint": "npm run lint:js && yarn lint:prettier",
+    "lint:fix": "eslint --cache --fix .",
+    "prepare": "husky install"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mammutmedia/ioredis-parse-adapter.git"
+  },
+  "keywords": [
+    "parse-server",
+    "Redis",
+    "ioredis"
+  ],
+  "lint-staged": {
+    "*.{js}": "eslint --fix --cache",
+    "*.**": "prettier --write --ignore-unknown"
+  },
+  "author": "Mammut Media Marketing UG",
+  "bugs": {
+    "url": "https://github.com/mammutmedia/ioredis-parse-adapter/issues"
+  },
+  "homepage": "https://github.com/mammutmedia/ioredis-parse-adapter#readme",
+  "dependencies": {
+    "ioredis": "5.0.6"
+  },
+  "devDependencies": {
+    "@semantic-release/changelog": "6.0.1",
+    "@semantic-release/commit-analyzer": "9.0.2",
+    "@semantic-release/git": "10.0.1",
+    "@semantic-release/github": "8.0.4",
+    "@semantic-release/npm": "9.0.1",
+    "@semantic-release/release-notes-generator": "10.0.3",
+    "codecov": "3.8.3",
+    "config": "3.3.7",
+    "eslint": "8.17.0",
+    "eslint-config-prettier": "8.5.0",
+    "eslint-config-standard": "17.0.0",
+    "eslint-plugin-import": "2.26.0",
+    "eslint-plugin-n": "15.2.1",
+    "eslint-plugin-prettier": "4.0.0",
+    "eslint-plugin-promise": "6.0.0",
+    "husky": "8.0.1",
+    "jasmine": "4.1.0",
+    "jasmine-spec-reporter": "7.0.0",
+    "lint-staged": "13.0.0",
+    "nyc": "15.1.0",
+    "parse": "3.4.2",
+    "prettier": "2.6.2",
+    "semantic-release": "19.0.2"
+  }
+}

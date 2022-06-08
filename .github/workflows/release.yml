@@ -1,0 +1,35 @@
+name: Release
+
+on:
+  push:
+    branches:
+      - master
+
+  workflow_dispatch:
+
+jobs:
+  release:
+    name: Release
+    runs-on: self-hosted
+    steps:
+      - name: Checkout
+        uses: actions/checkout@2541b1294d2704b0964813337f33b291d3f8596b # tag=v3
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+
+      - name: Setup Node.js
+        uses: actions/setup-node@17f8bd926464a1afa4c6a11669539e9c1ba77048 # tag=v3
+        with:
+          node-version: '16.x'
+
+      - name: Install yarn
+        run: npm install yarn -g
+
+      - name: Install Dependancies
+        run: yarn install --frozen-lockfile --non-interactive --no-progress --prefer-offline
+
+      - name: Release
+        env:
+          GITHUB_TOKEN: ${{ secrets.CI_TOKEN }}
+        run: npx semantic-release

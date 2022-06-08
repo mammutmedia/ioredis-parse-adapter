@@ -1,0 +1,38 @@
+name: Coverage
+
+on:
+  pull_request:
+    branches:
+      - '**'
+      - '!renovate/*'
+    paths:
+      - 'src/**'
+      - 'spec/**'
+      - '.nycrc'
+
+  workflow_dispatch:
+
+jobs:
+  coverage:
+    runs-on: self-hosted
+    steps:
+      - name: Checkout
+        uses: actions/checkout@2541b1294d2704b0964813337f33b291d3f8596b # tag=v3
+
+      - name: Use Node.js 16.x
+        uses: actions/setup-node@17f8bd926464a1afa4c6a11669539e9c1ba77048 # tag=v3
+        with:
+          node-version: 16.x
+
+      - name: Install Dependencies
+        run: npm ci
+
+      - name: Run tests
+        run: npm test
+
+      - name: Upload coverage
+        uses: codecov/codecov-action@81cd2dc8148241f03f5839d295e000b8f761e378 # tag=v3
+        with:
+          token: ${{ secrets.CODECOV_TOKEN }}
+          directory: ./coverage
+          fail_ci_if_error: true
