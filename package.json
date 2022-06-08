@@ -1,6 +1,6 @@
 {
   "name": "ioredis-parse-adapter",
-  "version": "0.0.0-development",
+  "version": "1.0.0",
   "description": "parse-server redis adapter using ioredis",
   "main": "src/index.js",
   "license": "GPLV3",
