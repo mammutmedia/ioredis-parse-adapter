@@ -58,6 +58,6 @@
     "nyc": "15.1.0",
     "parse": "3.4.2",
     "prettier": "2.6.2",
-    "semantic-release": "19.0.2"
+    "semantic-release": "19.0.3"
   }
 }
