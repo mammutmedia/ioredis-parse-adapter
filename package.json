@@ -33,7 +33,7 @@
   },
   "homepage": "https://github.com/mammutmedia/ioredis-parse-adapter#readme",
   "dependencies": {
-    "ioredis": "5.0.6"
+    "ioredis": "5.1.0"
   },
   "devDependencies": {
     "@semantic-release/changelog": "6.0.1",
