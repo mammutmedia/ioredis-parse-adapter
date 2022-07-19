@@ -1,3 +1,10 @@
+## [1.0.2](https://github.com/mammutmedia/ioredis-parse-adapter/compare/1.0.1...1.0.2) (2022-07-19)
+
+
+### Bug Fixes
+
+* **deps:** update dependency ioredis to v5.2.1 ([8c4343c](https://github.com/mammutmedia/ioredis-parse-adapter/commit/8c4343cbef59c789f185690d4fd52d40fb9cb97e))
+
 ## [1.0.1](https://github.com/mammutmedia/ioredis-parse-adapter/compare/1.0.0...1.0.1) (2022-06-28)
 
 
