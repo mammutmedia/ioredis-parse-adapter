@@ -35,8 +35,12 @@ describe('IORedisAdapter tests', () => {
   })
 
   it('should connect to redis', async () => {
-    const client = new IORedisAdapter().client
-    const response = await client.ping()
-    expect(response).toBe('PONG')
+    const adapter = new IORedisAdapter()
+    const pub = adapter.pub
+    const sub = adapter.sub
+    const pubResponse = await pub.ping()
+    const subResponse = await sub.ping()
+    expect(pubResponse).toBe('PONG')
+    expect(subResponse).toBe('PONG')
   })
 })
