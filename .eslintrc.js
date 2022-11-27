@@ -5,16 +5,29 @@ module.exports = {
     node: true,
     jasmine: true
   },
-  extends: ['eslint:recommended', 'standard', 'plugin:prettier/recommended'],
+  plugins: ['prettier', 'unicorn'],
+  extends: [
+    'eslint:recommended',
+    'standard',
+    'prettier',
+    'plugin:prettier/recommended',
+    'plugin:unicorn/recommended'
+  ],
   parserOptions: {
-    ecmaVersion: 11
+    ecmaVersion: 'latest',
+    sourceType: 'module'
   },
-  globals: {
-    Parse: true
-  },
-  // add your custom rules here
   rules: {
     camelcase: 'off',
-    'no-new': 'off'
+    quotes: ['error', 'single'],
+    'no-multi-spaces': ['error'],
+    'no-var': ['error'],
+    'no-use-before-define': 'error',
+    'no-console': ['warn'],
+    'unicorn/prefer-module': 'off',
+    'unicorn/filename-case': 'off',
+    'prettier/prettier': 'error',
+    'unicorn/no-null': 'off',
+    'unicorn/prefer-top-level-await': 'off'
   }
 }
