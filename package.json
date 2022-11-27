@@ -1,6 +1,6 @@
 {
   "name": "ioredis-parse-adapter",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "parse-server redis adapter using ioredis",
   "main": "src/index.js",
   "license": "GPLV3",
@@ -36,14 +36,14 @@
   },
   "homepage": "https://github.com/mammutmedia/ioredis-parse-adapter#readme",
   "dependencies": {
-    "ioredis": "5.2.2"
+    "ioredis": "5.2.4"
   },
   "devDependencies": {
     "@actions/core": "1.10.0",
     "@semantic-release/changelog": "6.0.1",
     "@semantic-release/commit-analyzer": "9.0.2",
     "@semantic-release/git": "10.0.1",
-    "@semantic-release/github": "8.0.5",
+    "@semantic-release/github": "8.0.6",
     "@semantic-release/npm": "9.0.1",
     "@semantic-release/release-notes-generator": "10.0.3",
     "eslint": "8.22.0",
@@ -51,7 +51,7 @@
     "eslint-config-prettier": "8.5.0",
     "eslint-config-standard": "17.0.0",
     "eslint-plugin-import": "2.26.0",
-    "eslint-plugin-n": "15.2.4",
+    "eslint-plugin-n": "15.5.1",
     "eslint-plugin-prettier": "4.2.1",
     "eslint-plugin-promise": "6.0.0",
     "eslint-plugin-unicorn": "43.0.2",

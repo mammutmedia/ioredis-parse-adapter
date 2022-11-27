@@ -2,15 +2,16 @@ const Redis = require('ioredis')
 
 class IORedisAdapter {
   constructor(config) {
-    this.client = new Redis(config)
+    this.pub = new Redis(config)
+    this.sub = new Redis(config)
   }
 
   createPublisher() {
-    return this.client
+    return this.pub
   }
 
   createSubscriber() {
-    return this.client
+    return this.sub
   }
 }
 
