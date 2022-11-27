@@ -3,15 +3,18 @@ const IORedisAdapter = require('../src/index.js')
 describe('IORedisAdapter tests', () => {
   it('should not throw when initialized properly', () => {
     expect(() => {
-      new IORedisAdapter()
+      // eslint-disable-next-line no-unused-vars
+      const _ = new IORedisAdapter()
     }).not.toThrow()
 
     expect(() => {
-      new IORedisAdapter(6379)
+      // eslint-disable-next-line no-unused-vars
+      const _ = new IORedisAdapter(6379)
     }).not.toThrow()
 
     expect(() => {
-      new IORedisAdapter({
+      // eslint-disable-next-line no-unused-vars
+      const _ = new IORedisAdapter({
         port: 6379,
         host: '127.0.0.1',
         username: 'default',
@@ -20,7 +23,8 @@ describe('IORedisAdapter tests', () => {
     }).not.toThrow()
 
     expect(() => {
-      new IORedisAdapter('redis://127.0.0.1:6379/4')
+      // eslint-disable-next-line no-unused-vars
+      const _ = new IORedisAdapter('redis://127.0.0.1:6379/4')
     }).not.toThrow()
   })
 
