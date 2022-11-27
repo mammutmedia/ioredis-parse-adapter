@@ -8,5 +8,12 @@ insert_final_newline = true
 max_line_length = 120
 trim_trailing_whitespace = true
 
+[{package.json,*.yml}]
+indent_style = space
+indent_size = 2
+
+[*.md]
+trim_trailing_whitespace = false
+
 [*.yml]
 indent_size = 2
