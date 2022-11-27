@@ -27,7 +27,7 @@ jobs:
           node-version: ${{ matrix.node-version }}
           cache: 'npm'
 
-      - name: Install Dependancies
+      - name: Install dependencies
         run: npm ci
 
       - name: Check Linting
@@ -37,7 +37,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        node-version: ['14', '15', '16', '17', '18', '19']
+        node-version: ['14', '16', '18']
     name: ${{ matrix.name }}
     services:
       redis:
@@ -59,7 +59,7 @@ jobs:
           node-version: ${{ matrix.node-version }}
           cache: 'npm'
 
-      - name: Install Dependancies
+      - name: Install dependencies
         run: npm ci
 
       - name: Test
