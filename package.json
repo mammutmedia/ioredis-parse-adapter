@@ -30,7 +30,7 @@
     "*.{js}": "eslint --fix --cache",
     "*.**": "prettier --write --ignore-unknown"
   },
-  "author": "Mammut Media Marketing UG",
+  "author": "Mammut Media GmbH",
   "bugs": {
     "url": "https://github.com/mammutmedia/ioredis-parse-adapter/issues"
   },
