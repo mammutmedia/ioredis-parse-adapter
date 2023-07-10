@@ -61,6 +61,6 @@
     "nyc": "15.1.0",
     "prettier": "3.0.0",
     "semantic-release": "19.0.5",
-    "semver": "7.5.3"
+    "semver": "7.5.4"
   }
 }
